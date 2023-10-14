@@ -1,0 +1,46 @@
+:root {
+    /* colors */
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    /* fonts */
+    --fs-base: 1.6rem;
+
+    --ff-primary: 'Red Hat Display', sans-serif;
+
+    --fw-md: 500;
+    --fw-lg: 700;
+    --fw-xl: 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+
+    background: var(--pale-blue);
+    font-size: var(--fs-base);
+}
