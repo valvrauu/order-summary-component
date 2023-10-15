@@ -15,17 +15,39 @@
     <title>Frontend Mentor | Order summary card</title>
   </head>
   <body>
-    Order Summary
+    <div class="card">
+      <img 
+        class="card__illustration" 
+        src="src/images/illustration-hero.svg" 
+        alt=""
+      />
 
-    You can now listen to millions of songs, audiobooks, and podcasts on any 
-    device anywhere you like!
+      <div class="card__content">
+        <h2 class="card__title">Order Summary</h2>
 
-    Annual Plan
-    $59.99/year
+        <p class="card__text">
+          You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!
+        </p>
 
-    Change
+        <div class="card__details">
+          <img 
+            class="card__icon" 
+            src="src/images/icon-music.svg" 
+            alt="music icon"
+          />
 
-    Proceed to Payment
-    Cancel Order
+          <div class="card__summary">
+            <span class="card__type-plan">Annual Plan</span>
+            <span class="card__value-plan">$59.99/year</span>
+          </div>
+
+          <a class="btn btn--change" href="#">Change</a>
+        </div>
+
+        <a class="btn btn--proceed" href="#">Proceed to Payment</a>
+        <a class="btn btn--cancel" href="#">Cancel Order</a>
+      </div>
+    </div>
   </body>
 </html>
