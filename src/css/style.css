@@ -36,9 +36,10 @@
 }
 
 html {
-    min-height: 100vh;
-    min-height: 100dvh;
+    /* writing-mode: vertical-lr;
+    direction: ltr; */
 
+    min-block-size: 100%;
     font-size: 62.5%;
 }
 
@@ -47,13 +48,8 @@ body {
     align-items: center;
     justify-content: center;
 
+    min-width: 100vw;
     min-height: 100vh;
-    min-height: 100dvh;
-
-    min-block-size: 100vh;
-    min-block-size: 100dvh;
-
-    padding: 0 2.4rem;
     padding-inline: 2.4rem;
 
     background:
@@ -68,26 +64,29 @@ body {
 }
 
 .card {
-    max-width: 45rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
     max-inline-size: 45rem;
 
     background: var(--ntrl-min);
     border-radius: 2rem;
     box-shadow: 0 4rem 4rem -2rem hsla(228, 87%, 39%, 15.18%);
-    overflow: hidden;
 }
 
 .card__illustration {
     display: block;
 
-    max-width: 100%;
     max-inline-size: 100%;
     block-size: auto;
+    object-fit: cover;
+
+    border-start-start-radius: 2rem;
+    border-start-end-radius: 2rem;
 }
 
 .card__content {
-    padding: 3.2rem 2.4rem;
-
     padding-block: 3.2rem;
     padding-inline: 2.4rem;
 
@@ -96,7 +95,6 @@ body {
 }
 
 .card__title {
-    margin-bottom: 1.6rem;
     margin-block-end: 1.6rem;
     padding: 0 .8rem;
     padding-inline: .8rem;
@@ -108,7 +106,6 @@ body {
 }
 
 .card__text {
-    margin-bottom: 2.4rem;
     margin-block-end: 2.4rem;
     padding: 0 .8rem;
     padding-inline: .8rem;
@@ -127,9 +124,7 @@ body {
     flex-wrap: wrap;
     gap: 2rem;
 
-    margin-bottom: 2.4rem;
     margin-block-end: 2.4rem;
-    padding: 1.7rem 1.6rem;
     padding-block: 1.7rem;
     padding-inline: 1.6rem;
     
@@ -141,7 +136,6 @@ body {
 .card__icon {
     display: block;
 
-    max-width: 4.8rem;
     max-inline-size: 4.8rem;
     block-size: auto;
 }
@@ -178,7 +172,7 @@ body {
 }
 
 .btn--change {
-    margin-left: auto;
+    margin-inline-start: auto;
     
     color: var(--bright-blue);
     
@@ -193,9 +187,8 @@ body {
 }
 
 .btn--proceed {
-    margin-bottom: 2.4rem;
     margin-block-end: 2.4rem;
-    padding: 1.5rem 6.4rem;
+    padding-block: 1.5rem;
     
     color: var(--ntrl-min);
     background: var(--bright-blue);
@@ -224,7 +217,14 @@ body {
     color: var(--dark-blue);
 }
 
-@media screen and (max-width: 21.875em) {.btn--change {margin-right: auto;}} /*fix: btn--change center when breaking line*/
+/*fix: btn--change center when breaking line*/
+@media screen and (max-width: 21.875em) {
+    .btn--change {
+        margin-right: auto;
+        margin-inline-end: auto;
+    }
+
+} 
 
 @media screen and (min-width: 37.5em) {
     body {
@@ -236,7 +236,6 @@ body {
     }
 
     .card__content {
-        padding: 4.5rem 4.8rem 4.8rem;
         padding-block: 4.5rem 4.8rem;
         padding-inline: 4.8rem;
     }
@@ -246,7 +245,6 @@ body {
     }
     
     .card__text {
-        margin-bottom: 2rem;
         margin-block-end: 2rem;
 
         font-size: var(--fs-base);
@@ -254,10 +252,8 @@ body {
     }
     
     .card__details {    
-        margin-bottom: 3.2rem;
         margin-block-end: 3.2rem;
 
-        padding: 2.5rem 2.4rem;
         padding-block: 2.5rem;
         padding-inline: 2.4rem;
     }
@@ -285,7 +281,6 @@ body {
     }
     
     .btn--proceed {
-        margin-bottom: 3.2rem;
         margin-block-end: 3.2rem;
     }
 }
